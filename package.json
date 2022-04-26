@@ -3,6 +3,10 @@
   "version": "2.0.0",
   "description": "A Discord.JS framework inspired by Discord-Akairo",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "repository": "https://github.com/Xenfo/snow.js",
   "author": "Samuel Corsi-House <chouse.samuel@gmail.com>",
   "license": "MIT",
@@ -10,7 +14,6 @@
     "prepare": "tsup && is-ci || husky install",
     "commit": "cz",
     "build": "tsup",
-    "watch": "tsup --watch",
     "lint": "eslint --fix --ignore-path .gitignore .",
     "format": "prettier --write --ignore-path .prettierignore .",
     "changelog": "git cliff -u --prepend ./CHANGELOG.md"
@@ -35,12 +38,18 @@
     "lint-staged": "^12.3.2",
     "prettier": "^2.5.1",
     "tslib": "^2.3.1",
-    "tsup": "^5.11.12",
+    "tsup": "^5.11.13",
     "typescript": "^4.5.5"
   },
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"
     }
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.12.0",
+    "@discordjs/rest": "^0.3.0",
+    "discord-api-types": "^0.26.1",
+    "discord.js": "^13.6.0"
   }
 }
